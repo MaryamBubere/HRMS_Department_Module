@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ action }} Department</h2>
+<form method="post">
+  <div class="mb-3">
+    <label class="form-label">Department Name</label>
+    <input name="name" class="form-control" value="{{ dept.name if dept else '' }}" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Description</label>
+    <textarea name="description" class="form-control">{{ dept.description if dept else '' }}</textarea>
+  </div>
+  <button class="btn btn-primary">{{ action }}</button>
+  <a href="{{ url_for('departments_list') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
