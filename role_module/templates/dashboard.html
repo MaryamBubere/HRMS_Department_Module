@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8"><title>Roles Dashboard</title></head>
+  <body>
+<h2>Role Dashboard</h2>
+<a href="/create">Create Role</a>
+<table border="1">
+<tr><th>ID</th><th>Name</th><th>Description</th><th>Actions</th></tr>
+{% for r in roles %}
+<tr>
+<td>{{r.role_id}}</td>
+<td>{{r.role_name}}</td>
+<td>{{r.description}}</td>
+<td>
+<a href="/edit/{{r.role_id}}">Edit</a>
+<a href="/delete/{{r.role_id}}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>
+  </body>
+</html>
